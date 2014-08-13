@@ -24,7 +24,7 @@
       var template = Handlebars.compile( $("#grocery_item_template").html());
       var html = template(this.model.toJSON());
       // Load the compiled HTML into the Backbone "el"
-      this.$el.html( html );
+      this.$el.append( html );
     }
   })
 
@@ -34,6 +34,7 @@
   // create grocery list
   var groceryList = new GroceryList;
 
-  var groceryItemView = new GroceryItemView({model: cheese, el:$('#main-container')});
+  var groceryItemViewCheese = new GroceryItemView({model: cheese, el:$('#main-container')});
+  var groceryItemViewMilk = new GroceryItemView({model: milk, el:$('#main-container')});
 
 })();
